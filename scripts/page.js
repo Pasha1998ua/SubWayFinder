@@ -1,7 +1,7 @@
 function openNav() {
     document.getElementById("locationBtn").style.opacity = 0;
     document.getElementById("menuBtn").style.opacity = 0;
-    document.getElementById("myNav").style.width = "30%";
+    document.getElementById("myNav").style.width = "100%";
     setTimeout(function(){
         document.getElementById("overlayContent").style.display = "block";
         document.getElementById("overlayContent").style.opacity = 1;
