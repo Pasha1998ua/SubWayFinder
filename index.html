@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Locate</title>
+        <link rel="stylesheet" href="styles\style.css">
+    </head>
+    <body onload="loadMap(50.4546600,30.5238000)" onunload="GUnload()">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="overlayContent" class="overlay-content">
+                <span class="locHead">Your Location</span>
+                <span class="latlng" id="lat">Latitude : </span>
+                <span class="latlng" id="lng">Longitude :</span>
+                <span class="locHead" id="locationMenuBtn" onclick="getNearest()">Nearest Subway</span>
+                <div id="subInfo">
+                    <span id="name">Name</span>
+                    <span id="branch">Branch</span>
+                </div>
+                <span class="locHead" id="detailInfo" onclick="detailInfoOn()">Detail Info</span>
+            </div>
+            <div id="detailInfoContent" class="overlay-content">
+                <span class="locHead" id="detailInfoOff" onclick="detailInfoOff()">Detail Info</span>
+                <span>First Train</span>
+                <span id="firstL"></span>
+                <span id="firstr"></span>
+                <span>Last Train</span>
+                <span id="lastL"></span>
+                <span id="lastR"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <span id="menuBtn" onclick="openNav()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABpSURBVGhD7dUhDgBBDMPA/XpffkcCE27gkQwrhfVJkiSSu/vIZebWjkhl5taOSGXm1o5IZaYkSV17HqQyc2tHpDJza0ekMnNrR6QyU5Kkrj0PUpm5tSNSmbm1I1KZubUjUpkpSZIA3vsBGDiz/TSUgz4AAAAASUVORK5CYII="></span>
+        <span id="locationBtn" onclick="getNearest()">Nearest Subway</span>
+
+        <div id="map"></div>
+
+        <script src="scripts/map.js" type="text/javascript"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF63_yh9KhlzLHJRJTqC-ISIV4wpG9ibE"></script>
+        <script src="scripts/page.js" type="text/javascript"></script>
+    </body>
+</html>
