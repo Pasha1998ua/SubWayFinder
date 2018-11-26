@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+#menuBtn{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+    background-color: rgba(0,0,0, 0.9);
+    width: 60px;
+    height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+#locationBtn {
+    position: absolute;
+    left: 100px;
+    top: 20px;
+    z-index: 1;
+    background-color: rgba(0,0,0, 0.9);
+    width: 220px;
+    height: 55px;
+    font-size: 26px;
+    color: #818181;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.4s;
+}
+
+.overlay-content {
+    display: none;
+    position: relative;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    transition: 0.2s;
+}
+
+.overlay #subInfo, #detailInfo {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.overlay a ,.overlay .locHead,.overlay .latlng,  .overlay #subInfo span{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .latlng, .overlay #subInfo span{
+    font-size: 20px;
+}
+
+.overlay #locationMenuBtn, #detailInfo, #detailInfoOff{
+    cursor: pointer;
+}
+
+#detailInfoContent{
+    display: none;
+    opacity: 0;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    font-size: 60px;
+}
+
+/*
+@media screen and (max-width: 992px) {
+    .overlay a ,.overlay .locHead,.overlay .latlng,  .overlay #subInfo span {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+    #myNav {
+        width: 100%;
+    }
+}*/
