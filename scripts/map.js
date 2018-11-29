@@ -58,11 +58,18 @@ function getNearest(){
     }
 }
 
-function setHTMLOnNearest(name,branch){
-    document.getElementById("name").innerHTML = "Name : " + name;
-    document.getElementById("branch").innerHTML = "Branch : " + branch;
+function setHTMLOnNearest(LocData){
+    document.getElementById("name").innerHTML = "Name : " + LocData.name;
+    document.getElementById("branch").innerHTML = "Branch : " + LocData.branch;
     document.getElementById("subInfo").style.opacity = 1;
     document.getElementById("detailInfo").style.opacity = 1;
+
+    document.getElementById("firstL").innerHTML = LocData.firstL;
+    document.getElementById("firstR").innerHTML = LocData.firstR;
+    document.getElementById("lastL").innerHTML = LocData.lastL;
+    document.getElementById("lastR").innerHTML = LocData.lastR;
+    document.getElementById("description").innerHTML = LocData.description;
+    document.getElementById("nearest").innerHTML = LocData.near;
 }
 
 function addMarker(position){
@@ -95,7 +102,7 @@ function fingNearestToLoc(loc){
         }
     });
 
-    setHTMLOnNearest(LocMinDist.name,LocMinDist.branch);
+    setHTMLOnNearest(LocMinDist);
     addMarker({lat: LocMinDist.lat, lng: LocMinDist.lng});
 }
 

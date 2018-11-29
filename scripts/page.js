@@ -9,6 +9,7 @@ function openNav() {
 }
 
 function closeNav() {
+    detailInfoOff();
     document.getElementById("overlayContent").style.opacity = 0;
     setTimeout(function(){
         document.getElementById("myNav").style.width = "0%";

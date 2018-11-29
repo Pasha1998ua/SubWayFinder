@@ -116,6 +116,11 @@ body{
     transition: 0.3s;
 }
 
+#description, #nearest{
+    margin: 0 15%;
+    text-align: justify;
+}
+
 .overlay .closebtn {
     position: absolute;
     top: 10px;
@@ -123,15 +128,11 @@ body{
     font-size: 60px;
 }
 
-/*
-@media screen and (max-width: 992px) {
-    .overlay a ,.overlay .locHead,.overlay .latlng,  .overlay #subInfo span {font-size: 20px}
+
+@media screen and (max-width: 600px) {
     .overlay .closebtn {
         font-size: 40px;
         top: 15px;
         right: 35px;
     }
-    #myNav {
-        width: 100%;
-    }
-}*/
+}
