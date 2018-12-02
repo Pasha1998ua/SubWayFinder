@@ -17,7 +17,7 @@ function loadMap(latIn,lngIn) {
             });
             document.getElementById("lat").innerHTML = "Latitude : " + Math.round(position.coords.latitude * 1000) / 1000 + "";
             document.getElementById("lng").innerHTML = "Longitude : " + Math.round(position.coords.longitude * 1000) / 1000 + "";
-            addMarker(startPos);
+            addMarker(startPos, "personIcon", "Your position");
         });
     } else {
         var startPos = {lat: latIn, lng: lngIn};
@@ -33,7 +33,7 @@ function loadMap(latIn,lngIn) {
         });
         document.getElementById("lat").innerHTML = "Latitude : " + Math.round(latIn * 1000) / 1000 + "";
         document.getElementById("lng").innerHTML = "Longitude : " + Math.round(lngIn * 1000) / 1000 + "";
-        addMarker(startPos);
+        addMarker(startPos, "personIcon", "Your position");
     }
 }
 
@@ -72,9 +72,20 @@ function setHTMLOnNearest(LocData){
     document.getElementById("nearest").innerHTML = LocData.near;
 }
 
-function addMarker(position){
+function addMarker(position,picName,name){
     var marker = new google.maps.Marker({position: position});
     marker.setMap(map);
+
+    var content = document.createElement('div');
+    content.innerHTML = '<img id="tooltipImg" src="/images/'+ picName +'.png" alt="'+ picName +'"><span id="tooltipSpan">'+ name +'</span>';
+    
+    var infowindow = new google.maps.InfoWindow({
+        content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
 }
 
 function fingNearestToLoc(loc){
@@ -103,7 +114,7 @@ function fingNearestToLoc(loc){
     });
 
     setHTMLOnNearest(LocMinDist);
-    addMarker({lat: LocMinDist.lat, lng: LocMinDist.lng});
+    addMarker({lat: LocMinDist.lat, lng: LocMinDist.lng},LocMinDist.picName,LocMinDist.name);
 }
 
 function rad(x) {
