@@ -11,7 +11,7 @@ function loadMap(latIn,lngIn) {
                 zoomControl: true,
                 mapTypeControl: false,
                 scaleControl: true,
-                streetViewControl: false,
+                streetViewControl: true,
                 rotateControl: false,
                 fullscreenControl: false
             });
